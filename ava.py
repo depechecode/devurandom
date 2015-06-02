@@ -5,7 +5,7 @@ mySites = ['github.com', 'stackoverflow.com', 'pastebin.com']
 
 for i in mySites:
 	#print i
-	query = "inurl:" + i + " " + "paddypower"
+	query = "inurl:" + i + " " + "SearchTerm"
 	#print query
 	query = urllib.urlencode ( { 'q' : query } )
 	#print query
