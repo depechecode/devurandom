@@ -15,7 +15,7 @@ def javaFind(file):
 	print file
 	txt = open(file, 'r')
 	for line in txt:
-		if ".exec" in line:
+		if ".exec" in line or "system(" in line:
 			print "Code Exec Found!?"
 			print line
 		else:
