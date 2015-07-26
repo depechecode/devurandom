@@ -5,8 +5,9 @@ def phpFind(file):
 	print file
 	txt = open(file, 'r')
 	for line in txt:
-		if "eval" in line and "$_" in line:
-			print "Code Exec Found!?"
+		if("eval" or "exec" or "passthru") in line and "$_" in line:
+		#if "eval" in line or "exec" in line and "$_" in line:
+			print "...Code Exec Found!?"
 			print line
 		else:
 			print "."
@@ -15,8 +16,8 @@ def javaFind(file):
 	print file
 	txt = open(file, 'r')
 	for line in txt:
-		if ".exec" in line or "system(" in line:
-			print "Code Exec Found!?"
+		if (".exec" or "system(") in line:
+			print "...Code Exec Found!?"
 			print line
 		else:
 			print "."
