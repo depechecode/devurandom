@@ -10,3 +10,5 @@ soup = bs4.BeautifulSoup(page.text)
 
 for link in soup.find_all('script'):      #Lists out css links
     print(link.get('src'))
+    print "<!------------------------------------!>"
+    
