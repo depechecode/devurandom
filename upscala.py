@@ -16,9 +16,9 @@ def grepForBug(file):
 		else:
 			print "."
 
-for root, dirs, files in os.walk("/Users/ciaranfitzpatrick/Documents"):
+for root, dirs, files in os.walk("/Users/Documents"):
 	for file in files:
-		if file.endswith(".scala"):
+		if file.endswith(".java"):
 			grepForBug(file)
 		else:
-			print "No scala files found in folder..."
+			print "No java files found in folder..."
