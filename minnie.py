@@ -1,5 +1,5 @@
 import bs4
-import requests, time
+import requests, time, urlparse
 
 url = raw_input("Enter a website to extract the URL's from: ")
 
