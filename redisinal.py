@@ -12,6 +12,7 @@ for ip in IPNetwork(subnet).iter_hosts():
    		print "Port is open on %s" % str(ip)
    		print ""
    		print "Connecting to Redis: "
+   		tn = telnetlib.Telnet(ip)
    		tn.write("CONFIG GET *"+"\n")
    		output = tn.read_all()
    		if "dbfilename" in output:
