@@ -9,12 +9,13 @@ port = 6379
 def connectRedis (ip):
 	# connect to the server on local computer
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)         
-	s.connect((ip, port))
+	s.connect((str(ip), port))
 
 	# receive data from the server
 	s.send ("CONFIG GET *" + "\n")
 	print s.recv(1024)
-
+   print ""
+   print "Looks Potentially Vulnerable.. "
 	# close the connection
 	s.close()
 
