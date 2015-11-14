@@ -14,8 +14,6 @@ def connectRedis (ip):
 	# receive data from the server
 	s.send ("CONFIG GET *" + "\n")
 	print s.recv(1024)
-   print ""
-   print "Looks Potentially Vulnerable.. "
 	# close the connection
 	s.close()
 
@@ -32,5 +30,18 @@ def subnetSearch(subnet):
    		else:
    			print "Port is not open %s" % str(ip)
 
-subnet = raw_input("Please enter target subnet: ")
-subnetSearch(subnet)
+def banner():
+    print """
+.______       _______  _______   __       _______. __  .__   __.      ___       __      
+|   _  \     |   ____||       \ |  |     /       ||  | |  \ |  |     /   \     |  |     
+|  |_)  |    |  |__   |  .--.  ||  |    |   (----`|  | |   \|  |    /  ^  \    |  |     
+|      /     |   __|  |  |  |  ||  |     \   \    |  | |  . `  |   /  /_\  \   |  |     
+|  |\  \----.|  |____ |  '--'  ||  | .----)   |   |  | |  |\   |  /  _____  \  |  `----.
+| _| `._____||_______||_______/ |__| |_______/    |__| |__| \__| /__/     \__\ |_______|
+                                                                                        
+                           Redis Lack of Authentication Checker (python redisinal.py)"""
+
+if __name__ == "__main__":
+   banner()
+   subnet = raw_input("Please enter target subnet: ")
+   subnetSearch(subnet)
